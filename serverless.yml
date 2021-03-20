@@ -1,0 +1,38 @@
+service: infnet-ms-activity
+
+provider:
+  name: aws
+  runtime: java8
+  memorySize: 4096
+  logRetentionInDays: 30
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'lambda:InvokeFunction'
+      Resource: "*"
+
+functions:
+  spring-handler:
+    handler: com.soundlab.lambdahandler.StreamLambdaHandler
+    timeout: 30
+    warmup: true
+    events:
+      - http:
+          path: /{any+}
+          method: ANY
+
+custom:
+  warmup:
+    prewarm: true
+  output:
+    file: .serverless/outputs.json
+
+resources:
+  - Description: Infnet Microservices - Activity
+
+package:
+  artifact: target/atividades-0.0.1-SNAPSHOT.jar
+
+plugins:
+  - serverless-stack-output
+  - serverless-plugin-warmup
