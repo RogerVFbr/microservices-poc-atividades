@@ -1,0 +1,29 @@
+{
+  "name": "template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "set-service-credentials": "sls config credentials --provider aws --profile infnet_microservices",
+    "deploy": "mvn clean package && sls deploy --aws-profile infnet_microservices",
+    "remove": "sls remove --aws-profile infnet_microservices",
+    "start-8080": "mvn spring-boot:run -Dactive.profile=local",
+    "start-8081": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8081",
+    "start-8082": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8082",
+    "start-8083": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8083",
+    "start-8084": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8084",
+    "start-8085": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8085",
+    "start-8086": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8086",
+    "start-8087": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8087",
+    "start-8088": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8088",
+    "start-8089": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8089"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serverless-apigateway-deployment-timestamp": "^1.0.2",
+    "serverless-plugin-warmup": "^4.9.0",
+    "serverless-pseudo-parameters": "^2.5.0",
+    "serverless-stack-output": "^0.2.3"
+  }
+}
