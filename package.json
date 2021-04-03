@@ -7,7 +7,7 @@
     "set-service-credentials": "sls config credentials --provider aws --profile infnet_microservices",
     "deploy": "mvn clean package && sls deploy --aws-profile infnet_microservices",
     "remove": "sls remove --aws-profile infnet_microservices",
-    "start-8080": "mvn spring-boot:run -Dactive.profile=local",
+    "start-8080": "mvn spring-boot:run -Dactive.profile=local ",
     "start-8081": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8081",
     "start-8082": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8082",
     "start-8083": "mvn spring-boot:run -Dactive.profile=local -Dspring-boot.run.arguments=--server.port=8083",

@@ -15,10 +15,10 @@ import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
-public abstract class AbstractExternalService<T> {
+public abstract class AbstractExternalHttpService<T> {
     protected T api;
 
-    protected AbstractExternalService(String baseUrl) {
+    protected AbstractExternalHttpService(String baseUrl) {
         this.api = getRetrofitClient(baseUrl).create(getApiType());
     }
 

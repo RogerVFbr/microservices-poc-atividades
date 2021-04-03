@@ -15,8 +15,15 @@ public class ApplicationControllerAdvice {
 
     @ExceptionHandler(AtividadeNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ApiErrors handleTemplateNotFoundException(AtividadeNotFoundException ex) {
+    public ApiErrors handleAtividadeNotFoundException(AtividadeNotFoundException ex) {
         LOG.error(String.format("AtividadeNotFoundException -> %s", ex.getMessage()));
+        return new ApiErrors().withError(ex.getMessage());
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public ApiErrors handleUserNotFoundException(UserNotFoundException ex) {
+        LOG.error(String.format("UserNotFoundException -> %s", ex.getMessage()));
         return new ApiErrors().withError(ex.getMessage());
     }
 

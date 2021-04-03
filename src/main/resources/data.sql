@@ -18,14 +18,12 @@ CREATE TABLE tb_user_association
     id            INT AUTO_INCREMENT PRIMARY KEY,
     activity_id   INT       NOT NULL,
     user_id       INT       NOT NULL,
+    grade       INT       NOT NULL,
     date_created  TIMESTAMP          DEFAULT CURRENT_TIMESTAMP NOT NULL,
     date_modified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
-INSERT INTO tb_user_association (id, activity_id, user_id)
-VALUES (1, 1, 1),
-       (2, 1, 2),
-       (3, 1, 3),
-       (4, 2, 2),
-       (5, 3, 1),
-       (6, 3, 3);
+INSERT INTO tb_user_association (id, activity_id, user_id, grade)
+VALUES (4, 2, 2, 10),
+       (5, 3, 1, 9),
+       (6, 3, 3, 5);

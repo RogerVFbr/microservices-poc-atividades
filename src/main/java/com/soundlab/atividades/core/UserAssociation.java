@@ -25,4 +25,22 @@ public class UserAssociation extends AbstractAuditableEntity {
 
     @Column(name = "user_id")
     private Long userId;
+
+    @Column(name = "grade")
+    private Integer grade;
+
+    public UserAssociation withActivityId(Long activityId) {
+        this.activityId = activityId;
+        return this;
+    }
+
+    public UserAssociation withUserId(Long userId) {
+        this.userId = userId;
+        return this;
+    }
+
+    public UserAssociation withGrade(Integer grade) {
+        this.grade = grade;
+        return this;
+    }
 }

@@ -1,7 +1,6 @@
 package com.soundlab.atividades.core.dto;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.soundlab.atividades.external.user.models.UserResponse;
 
 import java.util.List;
 
@@ -14,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class AtividadeResponseDTO {
     private Long id;
     private String name;
-    private List<UserResponse> users;
+    private List<UserResponseDTO> users;
 
     public AtividadeResponseDTO(Long id, String name) {
         this.id = id;
@@ -37,15 +36,15 @@ public class AtividadeResponseDTO {
         this.name = name;
     }
 
-    public List<UserResponse> getUsers() {
+    public List<UserResponseDTO> getUsers() {
         return users;
     }
 
-    public void setUsers(List<UserResponse> users) {
+    public void setUsers(List<UserResponseDTO> users) {
         this.users = users;
     }
 
-    public AtividadeResponseDTO withUsers(List<UserResponse> users) {
+    public AtividadeResponseDTO withUsers(List<UserResponseDTO> users) {
         this.users = users;
         return this;
     }

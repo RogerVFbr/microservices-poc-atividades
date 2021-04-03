@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -60,6 +61,14 @@ public class AtividadeController {
             .buildAndExpand(createdActivity.getId())
             .toUriString();
         return ResponseEntity.status(CREATED).header(HttpHeaders.LOCATION, location).build();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, params = { "idAtividade", "idUser", "grade" }, produces = { "application/json"})
+    @ResponseStatus(CREATED)
+    void saveGrade(@RequestParam("idAtividade") Long activityId,
+                   @RequestParam("idUser") Long userId,
+                   @RequestParam("grade") Integer grade) {
+        atividadeService.saveGrade(activityId, userId, grade);
     }
 
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
