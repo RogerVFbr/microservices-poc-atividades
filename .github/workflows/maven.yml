@@ -13,9 +13,6 @@ jobs:
   test:
     name: test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./VenturaAPI
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -28,9 +25,6 @@ jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./VenturaAPI
     steps:
     - uses: actions/checkout@v2
     - name: Download Node
