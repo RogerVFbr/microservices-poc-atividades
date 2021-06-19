@@ -9,9 +9,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface IUserApi {
-    @GET("/users")
+    @GET("users")
     Call<List<UserResponse>> getUsers();
 
-    @GET("/users/{id}")
+    @GET("users/{id}")
     Call<UserResponse> getUsersById(@Path("id") Long id);
 }
